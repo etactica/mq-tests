@@ -1,6 +1,11 @@
 At present this is tested with mosquitto 1.0.3.  
 To quite quickly start loading up the CPU usage of a mosquitto broker
 
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+ 4763  4730 mosquitt S     4148  14%  38% mosquitto -c mosquitto.nobridge.conf
+ 4766  4724 root     S     4696  16%  29% /tmp/simplemq 15
+
+
 $ ./simplemq 15
 
 mosquitto is running with the following config...

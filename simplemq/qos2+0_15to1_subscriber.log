@@ -1,0 +1,100 @@
+Output from mosquitto_sub -t "#" -h test.server.ip
+
+Things to note:
+* local/dev-2,3,4,5,6,7,8,9,10,15 are almost never seen.
+* despite publishing 15:1 more local than power messages, we see more like 1:3
+* We see some very very old messages.  power/ messages were close enough to real
+  time, local/ messages were slowly falling behind, with occasioanal very old
+  packets coming through. (marked XX)
+* every single qos0 packet is received, most of the qos2 packets are missing.
+  (the batch number should increment by two for each power message)
+
+batch:msg=[006135:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:20 +0000
+batch:msg=[005412:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:44 +0000
+batch:msg=[006137:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:21 +0000
+batch:msg=[006139:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:21 +0000
+batch:msg=[006141:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:22 +0000
+batch:msg=[005420:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:47 +0000
+batch:msg=[006143:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:22 +0000
+batch:msg=[006145:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:23 +0000
+batch:msg=[006147:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:24 +0000
+batch:msg=[000254:12]-local/dev-12-Published: Mon, 03 Dec 2012 16:09:43 +0000
+batch:msg=[006149:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:24 +0000
+batch:msg=[006151:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:25 +0000
+batch:msg=[000266:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:09:46 +0000
+batch:msg=[006153:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:25 +0000
+batch:msg=[006155:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:26 +0000
+batch:msg=[006157:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:27 +0000
+batch:msg=[006159:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:27 +0000
+XX batch:msg=[000278:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:09:48 +0000
+batch:msg=[006161:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:28 +0000
+batch:msg=[006163:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:28 +0000
+batch:msg=[005442:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:53 +0000
+batch:msg=[006165:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:29 +0000
+batch:msg=[006167:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:30 +0000
+batch:msg=[006169:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:30 +0000
+batch:msg=[006171:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:31 +0000
+batch:msg=[005450:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:55 +0000
+batch:msg=[006173:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:31 +0000
+batch:msg=[006175:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:32 +0000
+batch:msg=[006177:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:33 +0000
+batch:msg=[005456:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:57 +0000
+batch:msg=[006179:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:33 +0000
+batch:msg=[006181:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:34 +0000
+batch:msg=[005464:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:29:59 +0000
+batch:msg=[006183:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:35 +0000
+batch:msg=[006185:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:35 +0000
+batch:msg=[006187:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:36 +0000
+batch:msg=[006189:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:36 +0000
+batch:msg=[005470:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:01 +0000
+batch:msg=[006191:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:37 +0000
+batch:msg=[006193:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:38 +0000
+batch:msg=[006195:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:38 +0000
+batch:msg=[005476:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:03 +0000
+batch:msg=[006197:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:39 +0000
+batch:msg=[006199:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:39 +0000
+batch:msg=[006201:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:40 +0000
+batch:msg=[005484:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:05 +0000
+batch:msg=[006203:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:41 +0000
+batch:msg=[006205:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:41 +0000
+batch:msg=[006207:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:42 +0000
+batch:msg=[005490:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:07 +0000
+batch:msg=[006209:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:42 +0000
+batch:msg=[006211:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:43 +0000
+batch:msg=[006213:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:44 +0000
+batch:msg=[006215:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:44 +0000
+batch:msg=[005494:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:08 +0000
+batch:msg=[006217:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:45 +0000
+batch:msg=[006219:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:45 +0000
+batch:msg=[006221:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:46 +0000
+XX batch:msg=[000382:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:10:06 +0000
+batch:msg=[006223:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:47 +0000
+batch:msg=[006225:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:47 +0000
+batch:msg=[000392:03]-local/dev-3-Published: Mon, 03 Dec 2012 16:10:08 +0000
+batch:msg=[006227:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:48 +0000
+batch:msg=[006229:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:48 +0000
+batch:msg=[006231:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:49 +0000
+batch:msg=[006233:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:50 +0000
+XX batch:msg=[000404:02]-local/dev-2-Published: Mon, 03 Dec 2012 16:10:10 +0000
+batch:msg=[006235:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:50 +0000
+batch:msg=[006237:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:51 +0000
+batch:msg=[006239:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:51 +0000
+batch:msg=[005518:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:15 +0000
+batch:msg=[006241:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:52 +0000
+batch:msg=[006243:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:53 +0000
+batch:msg=[005524:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:17 +0000
+batch:msg=[006245:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:53 +0000
+batch:msg=[006247:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:54 +0000
+batch:msg=[006249:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:55 +0000
+batch:msg=[006251:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:55 +0000
+batch:msg=[005530:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:19 +0000
+batch:msg=[006253:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:56 +0000
+batch:msg=[006255:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:56 +0000
+XX batch:msg=[000438:02]-local/dev-2-Published: Mon, 03 Dec 2012 16:10:16 +0000
+batch:msg=[006257:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:57 +0000
+batch:msg=[006259:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:58 +0000
+batch:msg=[006261:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:58 +0000
+batch:msg=[005542:01]-local/dev-1-Published: Mon, 03 Dec 2012 16:30:22 +0000
+batch:msg=[006263:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:33:59 +0000
+batch:msg=[006265:01]-power/bridgeddev-1-Published: Mon, 03 Dec 2012 16:34:00 +0000
+

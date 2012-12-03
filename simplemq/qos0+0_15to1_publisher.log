@@ -1,0 +1,32 @@
+
+It stays more consistent here, long term.
+
+Looptime: 494 millis: 32.388664 msg/sec, long term: 13888 messages at 35.519180 msgs / sec
+Looptime: 444 millis: 36.036037 msg/sec, long term: 13904 messages at 35.560101 msgs / sec
+Looptime: 450 millis: 35.555557 msg/sec, long term: 13920 messages at 35.510204 msgs / sec
+Looptime: 444 millis: 36.036037 msg/sec, long term: 13936 messages at 35.551022 msgs / sec
+Looptime: 450 millis: 35.555557 msg/sec, long term: 13952 messages at 35.501274 msgs / sec
+Looptime: 456 millis: 35.087719 msg/sec, long term: 13968 messages at 35.541985 msgs / sec
+Looptime: 447 millis: 35.794182 msg/sec, long term: 13984 messages at 35.492386 msgs / sec
+Looptime: 449 millis: 35.634743 msg/sec, long term: 14000 messages at 35.532993 msgs / sec
+Looptime: 444 millis: 36.036037 msg/sec, long term: 14016 messages at 35.573605 msgs / sec
+Looptime: 451 millis: 35.476719 msg/sec, long term: 14032 messages at 35.524052 msgs / sec
+Looptime: 447 millis: 35.794182 msg/sec, long term: 14048 messages at 35.564556 msgs / sec
+Looptime: 450 millis: 35.555557 msg/sec, long term: 14064 messages at 35.515152 msgs / sec
+Looptime: 457 millis: 35.010941 msg/sec, long term: 14080 messages at 35.555557 msgs / sec
+Looptime: 447 millis: 35.794182 msg/sec, long term: 14096 messages at 35.506298 msgs / sec
+Looptime: 448 millis: 35.714287 msg/sec, long term: 14112 messages at 35.546600 msgs / sec
+Looptime: 450 millis: 35.555557 msg/sec, long term: 14128 messages at 35.497486 msgs / sec
+Looptime: 452 millis: 35.398232 msg/sec, long term: 14144 messages at 35.537689 msgs / sec
+Looptime: 452 millis: 35.398232 msg/sec, long term: 14160 messages at 35.488720 msgs / sec
+Looptime: 446 millis: 35.874439 msg/sec, long term: 14176 messages at 35.528824 msgs / sec
+Looptime: 487 millis: 32.854210 msg/sec, long term: 14192 messages at 35.568924 msgs / sec
+Looptime: 448 millis: 35.714287 msg/sec, long term: 14208 messages at 35.520000 msgs / sec
+Looptime: 456 millis: 35.087719 msg/sec, long term: 14224 messages at 35.560001 msgs / sec
+Looptime: 451 millis: 35.476719 msg/sec, long term: 14240 messages at 35.511223 msgs / sec
+Looptime: 443 millis: 36.117382 msg/sec, long term: 14256 messages at 35.551121 msgs / sec
+Looptime: 450 millis: 35.555557 msg/sec, long term: 14272 messages at 35.502487 msgs / sec
+Looptime: 453 millis: 35.320087 msg/sec, long term: 14288 messages at 35.542290 msgs / sec
+Looptime: 452 millis: 35.398232 msg/sec, long term: 14304 messages at 35.493797 msgs / sec
+Looptime: 452 millis: 35.398232 msg/sec, long term: 14320 messages at 35.533497 msgs / sec
+

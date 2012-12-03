@@ -1,0 +1,46 @@
+"perf" report running against the simplemq tool, after it had
+been running "for a while"
+
+
+# Overhead   Command           Shared Object                               Symbol
+# ........  ........  ......................  ...................................
+#
+    66.73%  simplemq  libmosquitto.so.1       [.] _mosquitto_message_queue
+     3.54%  simplemq  libmosquitto.so.1       [.] _mosquitto_message_update
+     3.46%  simplemq  libmosquitto.so.1       [.] _mosquitto_message_remove
+     1.46%  simplemq  [nf_conntrack]          [k] 0x1b00  
+     1.10%  simplemq  libmosquitto.so.1       [.] _mosquitto_message_retry_check
+     0.94%  simplemq  [ip_tables]             [k] 0x344   
+     0.85%  simplemq  [kernel]                [k] __wake_up_sync_key
+     0.61%  simplemq  libuClibc-0.9.33.2.so   [.] _ppfs_parsespec
+     0.53%  simplemq  [kernel]                [k] tcp_ack
+     0.51%  simplemq  libpthread-0.9.33.2.so  [.] pthread_mutex_lock
+     0.49%  simplemq  [kernel]                [k] tcp_v4_rcv
+     0.44%  simplemq  [kernel]                [k] tcp_transmit_skb
+     0.44%  simplemq  libuClibc-0.9.33.2.so   [.] malloc
+     0.42%  simplemq  [nf_conntrack_ipv4]     [k] 0x500   
+     0.42%  simplemq  [kernel]                [k] ip_rcv
+     0.40%  simplemq  [kernel]                [k] nf_iterate
+     0.37%  simplemq  [kernel]                [k] __inet_lookup_established
+     0.34%  simplemq  libuClibc-0.9.33.2.so   [.] _vfprintf_internal
+     0.34%  simplemq  [kernel]                [k] __do_softirq
+     0.32%  simplemq  [kernel]                [k] tcp_sendmsg
+     0.29%  simplemq  [xt_conntrack]          [k] 0xd0    
+     0.27%  simplemq  [iptable_nat]           [k] 0x2d0   
+     0.26%  simplemq  [kernel]                [k] finish_task_switch.constprop.58
+     0.25%  simplemq  libuClibc-0.9.33.2.so   [.] memcpy
+     0.25%  simplemq  [kernel]                [k] __netif_receive_skb
+     0.23%  simplemq  [kernel]                [k] dev_hard_start_xmit
+     0.22%  simplemq  [kernel]                [k] process_backlog
+     0.22%  simplemq  [kernel]                [k] tcp_write_xmit
+     0.22%  simplemq  [kernel]                [k] handle_sys
+     0.22%  simplemq  [kernel]                [k] local_bh_enable
+     0.22%  simplemq  [kernel]                [k] dev_queue_xmit
+     0.22%  simplemq  [kernel]                [k] ip_finish_output
+     0.22%  simplemq  [kernel]                [k] tcp_rcv_established
+     0.21%  simplemq  [kernel]                [k] net_rx_action
+     0.21%  simplemq  libpthread-0.9.33.2.so  [.] __pthread_mutex_unlock_usercnt
+     0.21%  simplemq  libmosquitto.so.1       [.] _mosquitto_packet_write
+     0.20%  simplemq  [kernel]                [k] netif_rx
+     0.20%  simplemq  libmosquitto.so.1       [.] mosquitto_publish
+

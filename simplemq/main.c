@@ -32,7 +32,7 @@ int send_messages(struct state_s *st, char *topicfmt, int qos, int msg_count) {
     for (int i = 1; i <= msg_count; i++) {
         char topic[100];
         sprintf(topic, topicfmt, i);
-        sprintf(msg, "Batch:Message= %d:%d -- Published at %s",  st->batch, i, ttt);
+        sprintf(msg, "batch:msg=[%06d:%02d]-%s-Published: %s",  st->batch, i, topic, ttt);
         mosquitto_publish(st->mosq, NULL, topic, strlen(msg), msg, qos, false);
     }
     st->total_msgs_sent += msg_count;

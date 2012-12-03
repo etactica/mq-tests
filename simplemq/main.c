@@ -16,19 +16,27 @@ struct state_s {
     time_t start_time;
     long loop_time_millis;
     int total_msgs_sent;
-    
+    int batch;
     int msgs_local;
     int msgs_bridge;
 };
 
 int send_messages(struct state_s *st, char *topicfmt, int qos, int msg_count) {
     //printf("Sending %d messages to topic with base fmt: %s\n", msg_count, topicfmt);
-    for (int i = 0; i < msg_count; i++) {
+    char msg[4000];
+    time_t t = time(NULL);
+    struct tm *tmp = localtime(&t);
+    char ttt[200];
+    strftime(ttt, sizeof(ttt), "%a, %d %b %Y %T %z", tmp);
+
+    for (int i = 1; i <= msg_count; i++) {
         char topic[100];
         sprintf(topic, topicfmt, i);
-        mosquitto_publish(st->mosq, NULL, topic, 4, "abcd", qos, false);
+        sprintf(msg, "Batch:Message= %d:%d -- Published at %s",  st->batch, i, ttt);
+        mosquitto_publish(st->mosq, NULL, topic, strlen(msg), msg, qos, false);
     }
     st->total_msgs_sent += msg_count;
+    st->batch++;
     return 0;
 }
 
@@ -54,6 +62,10 @@ int main(int argc, char **argv) {
     
     mosquitto_lib_init();
     state.mosq = mosquitto_new("cpu-tester-123", true, NULL);
+    
+    // At ral's request for testing.  Reduces broker cpu, doesn't help on client cpu
+    mosquitto_message_retry_set(state.mosq, 600);
+    
     mosquitto_connect(state.mosq, "localhost", 1883, 60);
     mosquitto_publish(state.mosq, NULL, "status", strlen("ONLINE"), "ONLINE", 0, false);
     state.start_time = time(NULL);

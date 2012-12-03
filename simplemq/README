@@ -1,4 +1,4 @@
-At present this is tested with mosquitto 1.0.3.  
+At present this is tested with mosquitto 1.0.3 and 1.0.5
 To quite quickly start loading up the CPU usage of a mosquitto broker
 
   PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND

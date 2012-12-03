@@ -1,0 +1,74 @@
+At present this is tested with mosquitto 1.0.3.  
+To quite quickly start loading up the CPU usage of a mosquitto broker
+
+$ ./simplemq 15
+
+mosquitto is running with the following config...
+
+blah.conf: (nothing else, all defaults)
+log_dest syslog
+log_dest topic
+
+CPU usage of the mosquitto process (and this process) will steadily increase over time, and the message rate
+simplemq reaches will slowly decrease, and the loop time will slowly increase.
+Early: 
+Looptime: 330 millis: 48.484848 msg/sec, long term: 1664 messages at 46.222221 msgs / sec
+Looptime: 327 millis: 48.929665 msg/sec, long term: 1680 messages at 45.405407 msgs / sec
+Looptime: 325 millis: 49.230770 msg/sec, long term: 1696 messages at 45.837837 msgs / sec
+
+Late: 
+Looptime: 430 millis: 37.209301 msg/sec, long term: 18320 messages at 38.166668 msgs / sec
+Looptime: 789 millis: 20.278833 msg/sec, long term: 18336 messages at 38.200001 msgs / sec
+Looptime: 447 millis: 35.794182 msg/sec, long term: 18352 messages at 38.153847 msgs / sec
+
+Comments in code refer to "local" and "bridging" but even with bridging config removed, problem persists
+There are no subscribers at all, but if you use mosquitto_sub -t "#" -d, you see that the qos2 messages
+arrive very very sporadically, like so... ( qos2 publishes to local/dev-%d, qos0 publishes to power/)
+
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-1', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'local/dev-0', ... (4 bytes))
+abcd
+Client mosqsub/9631-pojak received PUBLISH (d0, q0, r0, m0, 'power/bridgeddev-0', ... (4 bytes))
+abcd
+
+
+

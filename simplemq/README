@@ -1,3 +1,12 @@
+
+NOTE: the problem seen here has been fixed in current versions of mosquitto.
+It was also never a problem for anyone using the threaded client library api.
+
+This code is only preserved as it can be a useful tool for generating large amounts of mismatched qos
+traffic.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 At present this is tested with mosquitto 1.0.3 and 1.0.5 (and 1.1 rev 50b640542a24)
 To quite quickly start loading up the CPU usage of a mosquitto broker
 

@@ -64,12 +64,13 @@ int main(int argc, char **argv) {
     state.mosq = mosquitto_new("cpu-tester-123", true, NULL);
     
     // At ral's request for testing.  Reduces broker cpu, doesn't help on client cpu
-    mosquitto_message_retry_set(state.mosq, 600);
+    //mosquitto_message_retry_set(state.mosq, 600);
     
     mosquitto_connect(state.mosq, "localhost", 1883, 60);
     mosquitto_publish(state.mosq, NULL, "status", strlen("ONLINE"), "ONLINE", 0, false);
     state.start_time = time(NULL);
     struct timeval loop_start, loop_end;
+    //mosquitto_loop_start(state.mosq);
     while(1) {
         gettimeofday(&loop_start, NULL);
         mosquitto_loop(state.mosq, 100, 20);
